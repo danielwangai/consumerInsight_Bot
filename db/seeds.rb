@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+[4, 5, 6, 7, 8, 9, 10].each do |id|
+	question = Question.find(id)
+	(1..10).to_a.each do |option|
+		Option.create text: option, question: question
+	end
+end
