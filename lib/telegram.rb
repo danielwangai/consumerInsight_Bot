@@ -7,7 +7,7 @@ class Telegram
 	end
 
 	def self.reply_markup options = ["Male", "Female"]
-		Telegrammer::DataTypes::ReplyKeyboardMarkup.new(
+		Telegrammer::DataTypes::ReplyKeyboardMarkup.new(	
 			keyboard: options,
 			resize_keyboard: true
 		)
@@ -15,7 +15,7 @@ class Telegram
 
 	def self.hide_keyboard
 		reply_markup = Telegrammer::DataTypes::ReplyKeyboardHide.new(
-			hide_keyboard = true
+			hide_keyboard: true
 		)
 	end
 
@@ -25,7 +25,7 @@ class Telegram
 		else
 			rm = reply_markup(options)
 		end
-		bot.send_message(chat_id: chat_id, text: text, reply_markup: rm)
+		bot.send_message(chat_id: chat_id, text: text, reply_markup:rm)
 	end
 
 	def self.set_webhook url
