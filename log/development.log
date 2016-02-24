@@ -244,3 +244,161 @@ Migrating to CreateWizards (20160224070656)
             FROM sqlite_temp_master
             WHERE name='index_responses_on_reviewer_id' AND type='index'
 
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-24 10:23:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 113ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2016-02-24 10:23:05 +0300
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "options"
+  [1m[36mOption Load (0.2ms)[0m  [1mSELECT  "options".* FROM "options"  ORDER BY options.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "progresses"
+  [1m[36mProgress Load (0.1ms)[0m  [1mSELECT  "progresses".* FROM "progresses"  ORDER BY progresses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions"
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT  "questions".* FROM "questions"  ORDER BY questions.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "responses"
+  [1m[36mResponse Load (0.1ms)[0m  [1mSELECT  "responses".* FROM "responses"  ORDER BY responses.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "reviewers"
+  [1m[36mReviewer Load (0.1ms)[0m  [1mSELECT  "reviewers".* FROM "reviewers"  ORDER BY reviewers.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "steps"
+  [1m[36mStep Load (0.1ms)[0m  [1mSELECT  "steps".* FROM "steps"  ORDER BY steps.updated_at desc LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "wizards"
+  [1m[36mWizard Load (0.2ms)[0m  [1mSELECT  "wizards".* FROM "wizards"  ORDER BY wizards.updated_at desc LIMIT 1[0m
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (28.4ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (5.1ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (9.6ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (13.0ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (7.0ms)
+Completed 200 OK in 12089ms (Views: 11399.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/admin/wizard?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-24 10:23:55 +0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"wizard"}
+  [1m[35mWizard Load (0.2ms)[0m  SELECT  "wizards".* FROM "wizards"  ORDER BY wizards.id desc LIMIT 20 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "wizards"[0m
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (55.1ms)
+Completed 200 OK in 97ms (Views: 83.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/wizard/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-24 10:23:59 +0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"wizard"}
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (2.2ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.3ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.6ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (59.9ms)
+Completed 200 OK in 86ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/wizard/new" for 127.0.0.1 at 2016-02-24 10:24:11 +0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I6AkjBfnxZNOwLoqYxvGhxKGBAxl4UWVEYcfNibE00Ku1RoG9dP5cju87kyieE/ZobHRF2JUj8z0JP9mw020KQ==", "wizard"=>{"name"=>"Questionnaire", "start_keyword"=>"/questions", "reset_keyword"=>"/reset_questions"}, "return_to"=>"http://localhost:3300/admin/wizard", "_save"=>"", "model_name"=>"wizard"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "wizards" ("name", "start_keyword", "reset_keyword", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Questionnaire"], ["start_keyword", "/questions"], ["reset_keyword", "/reset_questions"], ["created_at", "2016-02-24 07:24:11.973884"], ["updated_at", "2016-02-24 07:24:11.973884"]]
+  [1m[35m (476.3ms)[0m  commit transaction
+Redirected to http://localhost:3300/admin/wizard
+Completed 302 Found in 489ms (ActiveRecord: 476.9ms)
+
+
+Started GET "/admin/wizard" for 127.0.0.1 at 2016-02-24 10:24:12 +0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"wizard"}
+  [1m[36mWizard Load (0.4ms)[0m  [1mSELECT  "wizards".* FROM "wizards"  ORDER BY wizards.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "wizards"
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (36.3ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_secondary_navigation.html.haml (1.5ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_navigation.html.haml (3.1ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (6.3ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/layouts/rails_admin/pjax.html.haml (5.0ms)
+Completed 200 OK in 213ms (Views: 202.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/step?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-24 10:24:15 +0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"step"}
+  [1m[36mStep Load (0.3ms)[0m  [1mSELECT  "steps".* FROM "steps"  ORDER BY steps.id desc LIMIT 20 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "steps"
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (16.9ms)
+Completed 200 OK in 38ms (Views: 24.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/step/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2016-02-24 10:24:47 +0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"step"}
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_form_field.html.haml (0.4ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/_submit_buttons.html.haml (4.1ms)
+  Rendered /home/dan/.rvm/gems/ruby-2.1.2/gems/rails_admin-0.8.1/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (15.5ms)
+Completed 200 OK in 39ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddWizardIdToStep (20160224072557)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "steps" ADD "wizard_id" integer[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_steps_on_wizard_id" ON "steps" ("wizard_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160224072557"]]
+  [1m[36m (159.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_options_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_options_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_progresses_on_reviewer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_progresses_on_reviewer_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_progresses_on_step_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_progresses_on_step_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_questions_on_step_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_questions_on_step_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_question_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_question_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_responses_on_reviewer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_responses_on_reviewer_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_steps_on_wizard_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_steps_on_wizard_id' AND type='index'
+[0m

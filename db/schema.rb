@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224070656) do
+ActiveRecord::Schema.define(version: 20160224072557) do
 
   create_table "options", force: :cascade do |t|
     t.string   "text"
@@ -64,7 +64,10 @@ ActiveRecord::Schema.define(version: 20160224070656) do
     t.string   "step_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "wizard_id"
   end
+
+  add_index "steps", ["wizard_id"], name: "index_steps_on_wizard_id"
 
   create_table "wizards", force: :cascade do |t|
     t.string   "name"
